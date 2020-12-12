@@ -11,10 +11,12 @@ namespace GoMusicNew.Dados.EntityFramework.Comum
     public class Contexto : DbContext
     {
         public DbSet<Musico> Musico { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MusicoConfiguracao());
+            modelBuilder.ApplyConfiguration(new EnderecoConfiguracao());
             base.OnModelCreating(modelBuilder);
         }
 
@@ -24,8 +26,8 @@ namespace GoMusicNew.Dados.EntityFramework.Comum
             optionsBuilder.UseSqlServer(@"
                 Data source = 201.62.57.93;
                 database = dbPICC_20202;
-                user id = visualstudio;
-                password = visualstudio;"
+                user id = laboratorio;
+                password = @laboratorio*;"
             );
         }
     }

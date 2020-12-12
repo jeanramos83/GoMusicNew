@@ -1,0 +1,103 @@
+﻿<style type="text/css">
+    body {
+        background-color: beige
+    }
+    tbody {
+        background-color: oldlace
+    }
+</style>
+<div style="color : rebeccapurple">
+<font color="darkslategray">
+    <form class="body" method="post" asp-controller="Musico" asp-action="Inserir">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="IdMusico">Id Musico</label>
+                <input type="text" class="form-control" id="IdMusico" name="IdMusico">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Nome">Nome</label>
+            <input type="text" class="form-control" id="Nome" placeholder="Digite seu nome COMPLETO!" name="Nome">
+        </div>
+        <div class="form-group">
+            <label for="Email">E-mail</label>
+            <input type="email" class="form-control" id="Email" placeholder="Digite o e-mail." name="Email">
+        </div>
+        <div class="form-group">
+            <label for="CPF">CPF</label>
+            <input type="cpf" class="form-control" id="cpf" placeholder="Apenas números." name="cpf">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Idade">Idade</label>
+                <input type="text" class="form-control" id="Idade" name="Idade">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Telefone">Telefone</label>
+                <input type="text" class="form-control" id="Telefone" placeholder="Digite o telefone com o DDD" name="Telefone">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="IdEndereco">Id Endereço</label>
+                <input type="text" class="form-control" id="IdEndereco" name="IdEndereco">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Rua">Rua</label>
+                <input type="text" class="form-control" id="Rua" name="Rua">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Numero">Número</label>
+                <input type="text" class="form-control" id="Numero" name="Numero">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Bairro">Bairro</label>
+                <input type="text" class="form-control" id="Bairro" name="Bairro">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Cidade">Cidade</label>
+                <input type="text" class="form-control" id="Cidade" name="Cidade">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="UF">UF</label>
+                <input type="text" class="form-control" id="UF" name="UF">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Instrumentos">Instrumentos</label>
+                <input type="text" class="form-control" id="Instrumentos" placeholder="Informe o(s) instrumento(s) que você toca." name="Instrumentos">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="DescricaoMusico">Descrição Músico</label>
+                <input type="text" class="form-control" id="DescricaoMusico" name="DescricaoMusico">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="GeneroMusical">Gênero Musical </label>
+                <input type="text" class="form-control" id="GeneroMusical" name="GeneroMusical">
+            </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</font>
+</div>

@@ -1,0 +1,59 @@
+﻿@model List<GoMusicNew.Models.Endereco>
+<h2>
+    Endereco
+</h2>
+<style type="text/css">
+    body {
+        background-color: beige
+    }
+
+    tbody {
+        background-color: oldlace
+    }
+</style>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID Endereco
+            </th>
+            <th>
+                Rua
+            </th>
+            <th>
+                Numero
+            </th>
+            <th>
+                Cidade
+            </th>
+            <th>
+                Bairro
+            </th>
+            <th>
+                UF
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdEndereco</td>
+                <td>@item.Rua</td>
+                <td>@item.Numero</td>
+                <td>
+                    @item.Cidade
+                </td>
+                <td>
+                    @item.Bairro
+                </td>
+                <td>
+                    @item.UF
+                </td>
+            </tr>
+        }
+        </tbody>
+</table>
+<a class="btn btn-sm btn-primary float-left" asp-area="" asp-controller="Musico" asp-action="Visualizar">
+    Voltar
+</a>
