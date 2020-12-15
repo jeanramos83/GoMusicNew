@@ -21,16 +21,16 @@ namespace GoMusicNew.Controllers
         }
 
        
-        public IActionResult Delete(int id,int id2)
+        public IActionResult Delete(int id,int id2)// Recebe os ID's da View;
         {
-            contexto = new Contexto();
+            contexto = new Contexto();//Conecta com o banco de dados;
             var db2 = new Musico
             {
                 IdMusico = Convert.ToInt32(id)
-            };
-            var busca2 = contexto.Musico.Find(db2.IdMusico);
-            contexto.Musico.Remove(busca2);
-            contexto.SaveChanges();
+            };  //Cria uma variavel(db2) tipo "var" e define ela com o tipo Musico, adiciona ID na variavel db2.IdMusico;
+            var busca2 = contexto.Musico.Find(db2.IdMusico); //Faz a busca no banco de dados e adiciona o resultado em uma variavel;
+            contexto.Musico.Remove(busca2);//Deleta o resultado da busca;
+            contexto.SaveChanges();//Salva as alterações no banco de dados.
             var db = new Endereco
             {
                 IdEndereco = Convert.ToInt32(id2)
@@ -39,12 +39,14 @@ namespace GoMusicNew.Controllers
             contexto.Endereco.Remove(busca);
             
             contexto.SaveChanges();
-            return RedirectToAction("Visualizar", "Musico");
+            return RedirectToAction("Visualizar", "Musico");//redireciona a pagina para a Lista de Musicos
         }
 
         [HttpGet]
         public IActionResult Inserir()
         {
+            ViewBag.Cidade = new Contexto().Cidade.ToList();
+            ViewBag.Genero = new Contexto().GeneroMusical.ToList();
             return View();
         }
 
@@ -59,10 +61,10 @@ namespace GoMusicNew.Controllers
                 {
                     IdEndereco = Convert.ToInt32(collection["IdEndereco"]),
                     Rua = collection["Rua"],
-                    Cidade = collection["Cidade"],
+                    Cidade = collection["CidadeNome"],
                     Numero = collection["Numero"],
                     Bairro = collection["Bairro"],
-                    UF = collection["UF"],
+                    UF = collection["CidadeUF"],
                     IdMusico = Convert.ToInt32(collection["IdMusico"])
                 };
                 contexto.Endereco.Add(endereco);
@@ -78,7 +80,7 @@ namespace GoMusicNew.Controllers
                     IdEndereco = Convert.ToInt32(collection["IdENdereco"]),
                     Instrumentos = collection["Instrumentos"],
                     DescricaoMusico = collection["DescricaoMusico"],
-                    GeneroMusical = collection["GeneroMusical"]
+                    GeneroMusical = collection["Genero"]
 
                 };
                 contexto.Musico.Add(musico);

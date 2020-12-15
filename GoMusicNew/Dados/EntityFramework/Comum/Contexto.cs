@@ -12,11 +12,15 @@ namespace GoMusicNew.Dados.EntityFramework.Comum
     {
         public DbSet<Musico> Musico { get; set; }
         public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Cidade> Cidade { get; set; }
+        public DbSet<GeneroMusical> GeneroMusical { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MusicoConfiguracao());
             modelBuilder.ApplyConfiguration(new EnderecoConfiguracao());
+            modelBuilder.ApplyConfiguration(new GeneroMusicalConfiguracao());
+            modelBuilder.ApplyConfiguration(new CidadeConfiguracao());
             base.OnModelCreating(modelBuilder);
         }
 

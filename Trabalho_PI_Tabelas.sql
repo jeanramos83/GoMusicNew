@@ -36,3 +36,39 @@ alter table GoMusic_Musico
 alter column Telefone varchar(15)
 
 alter table GoMusic_Endereco add IdMusico int 
+
+create table GoMusic_Cidade(
+	IdCidade int NOT NULL,
+	Nome varchar(20),
+	UF char(2)
+)
+ALTER TABLE GoMusic_Cidade
+ADD CONSTRAINT PKGoMusic_Cidade PRIMARY KEY (IdCidade)
+
+
+create table GoMusic_GeneroMusical(
+	IdGenero int NOT NULL,
+	Nome varchar(20)
+)
+ALTER TABLE GoMusic_GeneroMusical
+ADD CONSTRAINT PKGoMusic_GeneroMusical PRIMARY KEY (IdGenero)
+
+SELECT * FROM GoMusic_Endereco
+
+INSERT INTO GoMusic_Cidade 
+VALUES (1,'Araxá','MG');
+INSERT INTO GoMusic_Cidade 
+VALUES (2,'Ibiá','MG');
+INSERT INTO GoMusic_Cidade 
+VALUES (3,'Uberaba','MG');
+INSERT INTO GoMusic_Cidade 
+VALUES (4,'Pedizes','MG');
+INSERT INTO GoMusic_Cidade 
+VALUES (5,'Tapira','MG');
+
+INSERT INTO GoMusic_GeneroMusical 
+VALUES (1,'Sertanejo');
+INSERT INTO GoMusic_GeneroMusical 
+VALUES (2,'Forro');
+INSERT INTO GoMusic_GeneroMusical 
+VALUES (3,'Pagode');
